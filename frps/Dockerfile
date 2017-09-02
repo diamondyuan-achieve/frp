@@ -1,3 +1,10 @@
+FROM golang as gobuild
+
+ADD mian.go /frpConf/
+
+RUN cd /frpConf && \
+	go build
+
 FROM ubuntu:16.04 as frp
 MAINTAINER DiamondYuan <541832074>
 
@@ -13,7 +20,9 @@ RUN set -x \
     && mv frp_${FRP_VERSION}_linux_amd64 /var/frp 
 
 FROM alpine:3.6
-COPY --from=frp /var/frp/frps /frp/
-COPY ./frps.ini /frp/
 
-ENTRYPOINT /frp/frps -c /frp/frps.ini
+COPY --from=frp /var/frp/frps /frp/
+COPY --from=gobuild /frpConf/frpConf /frp/
+RUN /frp/frpConf
+
+ENTRYPOINT /frp/frps -c /frp/frp.ini
