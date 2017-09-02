@@ -27,7 +27,7 @@ func main() {
 			temp := strings.ToLower(rayKey[len(prefix):])
 			temps :=strings.Split(temp,"__")
 			head := temps[0]
-			key := temp[len(head)+1:]
+			key := temp[len(head)+2:]
 			tempMap := make(map[string]string)
 			if confMap[head] != nil {
 				tempMap = confMap[head]
