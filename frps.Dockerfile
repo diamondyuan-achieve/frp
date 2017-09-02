@@ -1,7 +1,7 @@
 FROM golang as gobuild
 MAINTAINER DiamondYuan <541832074>
 
-ADD /mian.go /frpConf/
+COPY /mian.go /frpConf/
 RUN cd /frpConf && \
 	go build
 
@@ -20,7 +20,8 @@ FROM alpine:3.6
 
 COPY --from=frp /var/frp/frpc /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
-RUN cd /frp/ && \ 
-    ./frpConf
+COPY ./frps.sh /
 
-ENTRYPOINT /frp/frpc -c /frp/frp.ini
+RUN chmod+x frps.sh
+
+CMD ["frps.sh"]

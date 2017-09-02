@@ -18,7 +18,8 @@ RUN set -x \
 
 FROM alpine:3.6
 
-COPY --from=frp /var/frp/frps /frp/
+COPY --from=frp /var/frp/frpc /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
+COPY ./runFrp.sh /
 
-CMD ["frp/frpConf;/frp/frps","-c","/frp/frp.ini"]
+CMD ["runFrp.sh"]
