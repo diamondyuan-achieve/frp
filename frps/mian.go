@@ -23,6 +23,7 @@ func main() {
 		fmt.Println(e)
 		pair := strings.Split(e, "=")
 		rayKey := pair[0];
+		fmt.Println(rayKey)
 		if len(rayKey) > len(prefix) && strings.Compare(rayKey[0:len(prefix)], prefix) == 0 {
 			temp := strings.ToLower(rayKey[len(prefix):])
 			temps :=strings.Split(temp,"__")
