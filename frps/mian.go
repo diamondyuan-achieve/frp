@@ -20,6 +20,7 @@ func main() {
 	confMap = make(map[string](map[string]string))
 	w := bufio.NewWriter(f)
 	for _, e := range os.Environ() {
+		fmt.Println(e)
 		pair := strings.Split(e, "=")
 		rayKey := pair[0];
 		if len(rayKey) > len(prefix) && strings.Compare(rayKey[0:len(prefix)], prefix) == 0 {
