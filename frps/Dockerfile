@@ -24,4 +24,4 @@ COPY ./frps.sh /usr/bin/
 
 RUN chmod a+x /usr/bin/frps.sh
 
-CMD [¡°frps.sh"]
+CMD ["frps.sh"]
