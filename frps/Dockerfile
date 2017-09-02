@@ -1,7 +1,7 @@
 FROM golang as gobuild
 MAINTAINER DiamondYuan <541832074>
 
-ADD /mian.go /frpConf/
+COPY /mian.go /frpConf/
 RUN cd /frpConf && \
 	go build
 
