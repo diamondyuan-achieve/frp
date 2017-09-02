@@ -1,4 +1,4 @@
-package 
+package main
 
 import (
 	"os"
@@ -10,11 +10,6 @@ import (
 var confMap map[string](map[string]string)
 
 func main() {
-	os.Setenv("FRP_COMMON_SERVER_ADDR","47.52.119.153")
-	os.Setenv("FRP_COMMON_SERVER_PORT","7000")
-	os.Setenv("FRP_web02_TYPE","http")
-	os.Setenv("FRP_web02_LOCAL_PORT","9090")
-	os.Setenv("FRP_web02_custom_domains","nas.diamondyuan.com")
 	prefix := "FRP_"
 	filename := "frp.ini"
 	f, err := os.Create("./"+filename)
