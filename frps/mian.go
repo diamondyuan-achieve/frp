@@ -10,7 +10,7 @@ import (
 var confMap map[string](map[string]string)
 
 func main() {
-	prefix := "FRP_"
+	prefix := "FRP["
 	filename := "frp.ini"
 	f, err := os.Create("/frp/"+filename)
 	if err != nil {
@@ -24,7 +24,7 @@ func main() {
 		rayKey := pair[0];
 		if len(rayKey) > len(prefix) && strings.Compare(rayKey[0:len(prefix)], prefix) == 0 {
 			temp := strings.ToLower(rayKey[len(prefix):])
-			temps :=strings.Split(temp,"_")
+			temps :=strings.Split(temp,"]")
 			head := temps[0]
 			key := temp[len(head)+1:]
 			tempMap := make(map[string]string)
