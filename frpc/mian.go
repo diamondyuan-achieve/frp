@@ -10,7 +10,7 @@ import (
 var confMap map[string](map[string]string)
 
 func main() {
-	prefix := "FRP["
+	prefix := "FRP_"
 	filename := "frp.ini"
 	f, err := os.Create("/frp/"+filename)
 	if err != nil {
@@ -20,11 +20,12 @@ func main() {
 	confMap = make(map[string](map[string]string))
 	w := bufio.NewWriter(f)
 	for _, e := range os.Environ() {
+		fmt.Println(e)
 		pair := strings.Split(e, "=")
 		rayKey := pair[0];
 		if len(rayKey) > len(prefix) && strings.Compare(rayKey[0:len(prefix)], prefix) == 0 {
 			temp := strings.ToLower(rayKey[len(prefix):])
-			temps :=strings.Split(temp,"]")
+			temps :=strings.Split(temp,"__")
 			head := temps[0]
 			key := temp[len(head)+1:]
 			tempMap := make(map[string]string)
