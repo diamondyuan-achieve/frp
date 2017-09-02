@@ -12,7 +12,7 @@ var confMap map[string](map[string]string)
 func main() {
 	prefix := "FRP_"
 	filename := "frp.ini"
-	f, err := os.Create("./"+filename)
+	f, err := os.Create("/frp/"+filename)
 	if err != nil {
 		fmt.Printf("create map file error: %v\n", err)
 	}
