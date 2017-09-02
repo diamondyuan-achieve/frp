@@ -21,6 +21,6 @@ FROM alpine:3.6
 COPY --from=frp /var/frp/frps /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
 
-ENTRYPOINT /frp/froCinf
+ENTRYPOINT /frp/frpConf
 
 CMD /frp/frps -c /frp/frp.ini
