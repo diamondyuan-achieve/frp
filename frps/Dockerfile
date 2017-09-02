@@ -22,6 +22,6 @@ COPY --from=frp /var/frp/frpc /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
 COPY ./frps.sh /
 
-RUN chmod a+x /frps.sh
+RUN chmod x ./frps.sh
 
 CMD ["./frps.sh"]
