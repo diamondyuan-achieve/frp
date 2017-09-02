@@ -20,8 +20,8 @@ FROM alpine:3.6
 
 COPY --from=frp /var/frp/frpc /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
-COPY ./frps.sh /
+COPY ./frps.sh /usr/bin/
 
-RUN chmod x ./frps.sh
+RUN chmod a+x /usr/bin/frps.sh
 
-CMD ["./frps.sh"]
+CMD [¡°frps.sh"]
