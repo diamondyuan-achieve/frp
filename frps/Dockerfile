@@ -13,6 +13,7 @@ RUN set -x \
     && mv frp_${FRP_VERSION}_linux_amd64 /var/frp 
 
 FROM alpine:3.6
-COPY --from=frp /var/frp/ /frp/
+COPY --from=frp /var/frp/frps /frp/
+COPY ./frps.ini /frp/
 
 ENTRYPOINT /frp/frps -c /frp/frps.ini
