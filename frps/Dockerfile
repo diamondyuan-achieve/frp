@@ -3,7 +3,7 @@ MAINTAINER DiamondYuan <541832074>
 
 COPY /mian.go /frpConf/
 RUN cd /frpConf && \
-	go build
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 
 FROM ubuntu:16.04 as frp
 
