@@ -1,18 +1,15 @@
 FROM golang as gobuild
+MAINTAINER DiamondYuan <541832074>
 
 ADD mian.go /frpConf/
-
 RUN cd /frpConf && \
 	go build
 
 FROM ubuntu:16.04 as frp
-MAINTAINER DiamondYuan <541832074>
 
 ARG FRP_VERSION=0.13.0
-
 RUN apt update \
     && apt install -y wget
-
 WORKDIR /tmp
 RUN set -x \
     && wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz \
@@ -23,6 +20,7 @@ FROM alpine:3.6
 
 COPY --from=frp /var/frp/frps /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
-RUN /frp/frpConf
+RUN cd /frp/ && \ 
+    ./frpConf
 
 ENTRYPOINT /frp/frps -c /frp/frp.ini
