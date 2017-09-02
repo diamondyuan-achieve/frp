@@ -20,6 +20,6 @@ FROM alpine:3.6
 
 COPY --from=frp /var/frp/frpc /frp/
 COPY --from=gobuild /frpConf/frpConf /frp/
-COPY ./runFrp.sh /
+COPY ./frps.sh /
 
-CMD ["runFrp.sh"]
+CMD ["frps.sh"]
