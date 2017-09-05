@@ -1,5 +1,5 @@
-[![](https://images.microbadger.com/badges/version/diamondyuan/frp:s.0.13.0.svg)](https://microbadger.com/images/diamondyuan/frp:s.0.13.0 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/diamondyuan/frp:c.0.13.0.svg)](https://microbadger.com/images/diamondyuan/frp:c.0.13.0 "Get your own version badge on microbadger.com")
+FRPC [![](https://images.microbadger.com/badges/version/diamondyuan/frp:s.0.13.0.svg)](https://microbadger.com/images/diamondyuan/frp:s.0.13.0 "Get your own version badge on microbadger.com")
+FPRS [![](https://images.microbadger.com/badges/version/diamondyuan/frp:c.0.13.0.svg)](https://microbadger.com/images/diamondyuan/frp:c.0.13.0 "Get your own version badge on microbadger.com")
 
 ## frp 
 
