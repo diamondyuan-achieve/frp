@@ -1,6 +1,3 @@
-Frps [![](https://images.microbadger.com/badges/version/diamondyuan/frp:s.0.13.0.svg)](https://microbadger.com/images/diamondyuan/frp:s.0.13.0 "Get your own version badge on microbadger.com")
-Frpc [![](https://images.microbadger.com/badges/version/diamondyuan/frp:c.0.13.0.svg)](https://microbadger.com/images/diamondyuan/frp:c.0.13.0 "Get your own version badge on microbadger.com")
-
 ## frp 
 
 What is frp?

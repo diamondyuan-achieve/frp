@@ -7,7 +7,7 @@ RUN cd /frpConf && \
 
 FROM ubuntu:16.04 as frp
 
-ARG FRP_VERSION=0.13.0
+ARG FRP_VERSION=0.16.0
 RUN apt update \
     && apt install -y wget
 WORKDIR /tmp
